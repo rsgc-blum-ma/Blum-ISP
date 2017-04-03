@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FDDD46F1E65FC2C003F21F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */; };
+		3FDDD4751E65FC2C003F21F3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDDD4741E65FC2C003F21F3 /* GameScene.swift */; };
+		3FDDD4771E65FC2C003F21F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDDD4761E65FC2C003F21F3 /* ViewController.swift */; };
+		3FDDD4791E65FC2C003F21F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDDD4781E65FC2C003F21F3 /* Assets.xcassets */; };
+		3FDDD47C1E65FC2C003F21F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDDD47A1E65FC2C003F21F3 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3FDDD46B1E65FC2C003F21F3 /* CS:GO Map layout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS:GO Map layout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FDDD4741E65FC2C003F21F3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3FDDD4761E65FC2C003F21F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FDDD4781E65FC2C003F21F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FDDD47B1E65FC2C003F21F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FDDD47D1E65FC2C003F21F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FDDD4831E65FD80003F21F3 /* Software ISP proposal .docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Software ISP proposal .docx"; path = "../../Software ISP proposal .docx"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FDDD4681E65FC2C003F21F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FDDD4621E65FC2C003F21F3 = {
+			isa = PBXGroup;
+			children = (
+				3FDDD46D1E65FC2C003F21F3 /* CS:GO Map layout */,
+				3FDDD46C1E65FC2C003F21F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FDDD46C1E65FC2C003F21F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FDDD46B1E65FC2C003F21F3 /* CS:GO Map layout.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FDDD46D1E65FC2C003F21F3 /* CS:GO Map layout */ = {
+			isa = PBXGroup;
+			children = (
+				3FDDD4831E65FD80003F21F3 /* Software ISP proposal .docx */,
+				3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */,
+				3FDDD4741E65FC2C003F21F3 /* GameScene.swift */,
+				3FDDD4761E65FC2C003F21F3 /* ViewController.swift */,
+				3FDDD4781E65FC2C003F21F3 /* Assets.xcassets */,
+				3FDDD4841E66027F003F21F3 /* photos */,
+				3FDDD47A1E65FC2C003F21F3 /* Main.storyboard */,
+				3FDDD47D1E65FC2C003F21F3 /* Info.plist */,
+			);
+			path = "CS:GO Map layout";
+			sourceTree = "<group>";
+		};
+		3FDDD4841E66027F003F21F3 /* photos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = photos;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FDDD46A1E65FC2C003F21F3 /* CS:GO Map layout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FDDD4801E65FC2C003F21F3 /* Build configuration list for PBXNativeTarget "CS:GO Map layout" */;
+			buildPhases = (
+				3FDDD4671E65FC2C003F21F3 /* Sources */,
+				3FDDD4681E65FC2C003F21F3 /* Frameworks */,
+				3FDDD4691E65FC2C003F21F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CS:GO Map layout";
+			productName = "CS:GO Map layout";
+			productReference = 3FDDD46B1E65FC2C003F21F3 /* CS:GO Map layout.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FDDD4631E65FC2C003F21F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Student;
+				TargetAttributes = {
+					3FDDD46A1E65FC2C003F21F3 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3FDDD4661E65FC2C003F21F3 /* Build configuration list for PBXProject "CS:GO Map layout" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FDDD4621E65FC2C003F21F3;
+			productRefGroup = 3FDDD46C1E65FC2C003F21F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FDDD46A1E65FC2C003F21F3 /* CS:GO Map layout */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FDDD4691E65FC2C003F21F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FDDD4791E65FC2C003F21F3 /* Assets.xcassets in Resources */,
+				3FDDD47C1E65FC2C003F21F3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FDDD4671E65FC2C003F21F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FDDD4771E65FC2C003F21F3 /* ViewController.swift in Sources */,
+				3FDDD4751E65FC2C003F21F3 /* GameScene.swift in Sources */,
+				3FDDD46F1E65FC2C003F21F3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3FDDD47A1E65FC2C003F21F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FDDD47B1E65FC2C003F21F3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FDDD47E1E65FC2C003F21F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FDDD47F1E65FC2C003F21F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		3FDDD4811E65FC2C003F21F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "CS:GO Map layout/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rsgc-student.CS-GO-Map-layout";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3FDDD4821E65FC2C003F21F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "CS:GO Map layout/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rsgc-student.CS-GO-Map-layout";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FDDD4661E65FC2C003F21F3 /* Build configuration list for PBXProject "CS:GO Map layout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FDDD47E1E65FC2C003F21F3 /* Debug */,
+				3FDDD47F1E65FC2C003F21F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FDDD4801E65FC2C003F21F3 /* Build configuration list for PBXNativeTarget "CS:GO Map layout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FDDD4811E65FC2C003F21F3 /* Debug */,
+				3FDDD4821E65FC2C003F21F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FDDD4631E65FC2C003F21F3 /* Project object */;
+}
