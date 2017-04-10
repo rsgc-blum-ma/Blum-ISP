@@ -13,7 +13,9 @@ import Cocoa
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
-        backgroundColor = SKColor.white
+        backgroundColor = SKColor.blue
+        
+        // Now we'll create the image sprites for each map
         
         var Inferno = SKSpriteNode()
         Inferno = SKSpriteNode(imageNamed: "Inferno")
@@ -72,44 +74,44 @@ class GameScene: SKScene {
         self.addChild(Cobblestone)
         
         // add a title
-    
+        
         let Title = SKLabelNode(fontNamed: "Helvetica-Bold")
         Title.text = "Select A Map"
         Title.fontSize = 100
         Title.color = SKColor.red
         Title.position = CGPoint(x: 1020, y: 1100)
         addChild(Title)
-    
-    
-}
-    
-override func mouseDown(with event: NSEvent) {
-    
-    
-    // Note: This is just to test my hitboxes, will remove this
-    
-    let Title2 = SKLabelNode(fontNamed: "Helvetica-Bold")
-    Title2.text = "Ur Hitboxes are working Max"
-    Title2.fontSize = 100
-    Title2.color = SKColor.red
-    Title2.position = CGPoint(x: 1020, y: 1000)
-    
-    // Iterate over all child nodes in the scene
-    for node in self.children {
         
-        // Only check for nodes that have a name of "Dust" (for level selection)
-        if let nodeName = node.name {
-            if nodeName.contains("Dust") {
-                
-                // Then see if the click is within this box
-                if node.contains(event.locationInWindow) {
+        
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        
+        
+        // Note: This is just to test my hitboxes, will remove this
+        
+        let Title2 = SKLabelNode(fontNamed: "Helvetica-Bold")
+        Title2.text = "Ur Hitboxes are working Max"
+        Title2.fontSize = 100
+        Title2.color = SKColor.red
+        Title2.position = CGPoint(x: 1020, y: 1000)
+        
+        // Iterate over all child nodes in the scene
+        for node in self.children {
+            
+            // Only check for nodes that have a name of "Dust" (for level selection)
+            if let nodeName = node.name {
+                if nodeName.contains("Dust") {
                     
-                    // for now
-                
-                    addChild(Title2)
-                    
-                                    
-                }
+                    // Then see if the click is within this box
+                    if node.contains(event.locationInWindow) {
+                        
+                        // for now
+                        
+                        addChild(Title2)
+                        
+                        
+                    }
                 }
             }
         }
