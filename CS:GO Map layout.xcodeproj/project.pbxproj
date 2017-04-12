@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F879B3D1E9EAB1900B8EF23 /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
 		3FDDD46B1E65FC2C003F21F3 /* CS:GO Map layout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS:GO Map layout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDDD4741E65FC2C003F21F3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 			children = (
 				3FDDD46D1E65FC2C003F21F3 /* CS:GO Map layout */,
 				3FDDD46C1E65FC2C003F21F3 /* Products */,
+				3F879B3D1E9EAB1900B8EF23 /* Independent_Study_Project_-_Checkpoint_1.docx */,
 			);
 			sourceTree = "<group>";
 		};
