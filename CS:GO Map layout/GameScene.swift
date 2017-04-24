@@ -24,14 +24,8 @@ class GameScene: SKScene {
         Inferno.position = CGPoint(x: 250, y: 250)
         Inferno.size = CGSize(width: 500, height: 500)
         Inferno.name = "Inferno"
-        Inferno.physicsBody = SKPhysicsBody(rectangleOf: Inferno.size)
-        
         self.addChild(Inferno)
-        print(Inferno.position.x)
-        print(Inferno.position.y)
-        print(Inferno.size.width)
-        print(Inferno.size.height)
-        
+
         var Nuke = SKSpriteNode()
         Nuke = SKSpriteNode(imageNamed: "Nuke")
         Nuke.position = CGPoint(x: 750, y: 250)
@@ -103,7 +97,9 @@ class GameScene: SKScene {
                 
                 // change value for MapSelected to be the image which the user has chose
                 
-                MapSelected = SKSpriteNode(imageNamed: ("\(node.name)"))
+                MapSelected = SKSpriteNode(imageNamed: (node.name)!)
+            
+                print("\(node.name)", terminator: "")
                 
                 // create a new GameScene
                 let GameScene = GameScene2(size: size)
