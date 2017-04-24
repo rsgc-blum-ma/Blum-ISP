@@ -15,6 +15,8 @@ import Cocoa
 
 class GameScene2 : SKScene {
     
+    var lastButtonPressed : String = ""
+    
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
@@ -51,14 +53,13 @@ class GameScene2 : SKScene {
     }
     
     
-    
+
     
     override func mouseDown(with event: NSEvent) {
         
         var smokeGrenade = SKSpriteNode()
         smokeGrenade = SKSpriteNode(imageNamed: "SmokeGrenade")
-        smokeGrenade.size = CGSize(width: 50, height: 50)
-        smokeGrenade.position = CGPoint(x: 50, y: 50)
+        smokeGrenade.size = CGSize(width: 60, height: 60)
         smokeGrenade.zPosition = 12
         smokeGrenade.name = "SmokeGrenade"
         
@@ -87,14 +88,31 @@ class GameScene2 : SKScene {
                 
             }
             
+            // check to see if Smoke was the last selected hitbox
+            
             if node.name == "Smoke" {
                 
                 if node.contains(event.location(in: self)) {
                     
-                    addChild(smokeGrenade)
+                    lastButtonPressed = node.name!
+                    
                     
                 }
                 
+            }
+            
+            // check if the smoke button has been pressed
+            
+            if lastButtonPressed == "Smoke" {
+                
+                // print the Smoke image at the cordinates of the mouse
+                
+                if node.contains(event.location(in: self)) {
+                    smokeGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
+                    print("Smoke")
+                    self.addChild(smokeGrenade)
+                    
+                }
             }
         }
     }

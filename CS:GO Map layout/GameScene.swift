@@ -10,6 +10,8 @@ import SpriteKit
 import GameplayKit
 import Cocoa
 var MapSelected = SKSpriteNode()
+
+var MapName = ""
 class GameScene: SKScene {
     var Map = MapSelected
     override func didMove(to view: SKView) {
@@ -99,7 +101,9 @@ class GameScene: SKScene {
                 
                 MapSelected = SKSpriteNode(imageNamed: (node.name)!)
             
-                print("\(node.name)", terminator: "")
+                MapName = node.name!
+                
+                print(("\(MapName)"), terminator: "")
                 
                 // create a new GameScene
                 let GameScene = GameScene2(size: size)
