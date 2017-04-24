@@ -26,5 +26,6 @@ class ViewController: NSViewController {
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
+        skView.showsPhysics = true
     }
 }

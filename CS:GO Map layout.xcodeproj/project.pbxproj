@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F879B3F1EA9342600B8EF23 /* GameScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F879B3E1EA9342600B8EF23 /* GameScene2.swift */; };
 		3FDDD46F1E65FC2C003F21F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */; };
 		3FDDD4751E65FC2C003F21F3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDDD4741E65FC2C003F21F3 /* GameScene.swift */; };
 		3FDDD4771E65FC2C003F21F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDDD4761E65FC2C003F21F3 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		3F879B3D1E9EAB1900B8EF23 /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
+		3F879B3E1EA9342600B8EF23 /* GameScene2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene2.swift; sourceTree = "<group>"; };
 		3FDDD46B1E65FC2C003F21F3 /* CS:GO Map layout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS:GO Map layout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDDD4741E65FC2C003F21F3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				3FDDD4831E65FD80003F21F3 /* Software ISP proposal .docx */,
 				3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */,
 				3FDDD4741E65FC2C003F21F3 /* GameScene.swift */,
+				3F879B3E1EA9342600B8EF23 /* GameScene2.swift */,
 				3FDDD4761E65FC2C003F21F3 /* ViewController.swift */,
 				3FDDD4781E65FC2C003F21F3 /* Assets.xcassets */,
 				3FDDD4841E66027F003F21F3 /* photos */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FDDD4771E65FC2C003F21F3 /* ViewController.swift in Sources */,
+				3F879B3F1EA9342600B8EF23 /* GameScene2.swift in Sources */,
 				3FDDD4751E65FC2C003F21F3 /* GameScene.swift in Sources */,
 				3FDDD46F1E65FC2C003F21F3 /* AppDelegate.swift in Sources */,
 			);
