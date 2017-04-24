@@ -61,8 +61,8 @@
 			children = (
 				3FDDD4831E65FD80003F21F3 /* Software ISP proposal .docx */,
 				3FDDD46E1E65FC2C003F21F3 /* AppDelegate.swift */,
-				3FDDD4741E65FC2C003F21F3 /* GameScene.swift */,
 				3F879B3E1EA9342600B8EF23 /* GameScene2.swift */,
+				3FDDD4741E65FC2C003F21F3 /* GameScene.swift */,
 				3FDDD4761E65FC2C003F21F3 /* ViewController.swift */,
 				3FDDD4781E65FC2C003F21F3 /* Assets.xcassets */,
 				3FDDD4841E66027F003F21F3 /* photos */,

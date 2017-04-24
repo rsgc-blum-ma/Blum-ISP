@@ -9,9 +9,9 @@
 import SpriteKit
 import GameplayKit
 import Cocoa
-var MapSelected : String?
+var MapSelected = SKSpriteNode()
 class GameScene: SKScene {
-    
+    var Map = MapSelected
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.blue
         
@@ -92,23 +92,39 @@ class GameScene: SKScene {
         
     }
     override func mouseDown(with event: NSEvent) {
-    
+        
         // Iterate over all child nodes in the scene
+        
         for node in self.children {
             
-            // Only check for nodes that have a name of "Dust" (for level selection)
-            if let nodeName = node.name {
+            // Only proceed when the mouse location is within the node clicked on
+            
+            if node.contains(event.location(in: self)) {
                 
-                // Only proceed when the mouse location is within the node clicke don
-                if node.contains(event.location(in: self)) {
-                    MapSelected = nodeName
-                    
-                }
-
+                // change value for MapSelected to be the image which the user has chose
+                
+                MapSelected = SKSpriteNode(imageNamed: ("\(node.name)"))
+                
+                // create a new GameScene
+                let GameScene = GameScene2(size: size)
+                
+                // create an animation for the transition of scenes
+                
+                let reveal = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+                
+                // access the current view and present the new scene
+                
+                view?.presentScene(GameScene, transition: reveal)
             }
+            
+            
         }
-        print(("\(MapSelected)"), terminator: "")
     }
+    
+    
 }
+
+
+
 
 

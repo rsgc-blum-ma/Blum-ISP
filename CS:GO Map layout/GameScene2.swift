@@ -11,11 +11,23 @@ import SpriteKit
 import GameplayKit
 import Cocoa
 
-    func didMove(to view: SKView) {
 
-    func viewDidLoad() {
-        let gamescene2 = GameScene(size: CGSize(width: 1280, height:800))
-        MapSelected = 
+// Create the new GameScene
+
+class GameScene2 : SKScene {
+    override func didMove(to view: SKView) {
+        backgroundColor = SKColor.white
         
+        // change the size of the GameScene
+    
+        
+        // display the map which was selected by the user 
+
+        var MapChosen = SKSpriteNode()
+        MapChosen = MapSelected
+        MapChosen.position = CGPoint(x: 250, y: 250)
+        MapChosen.size = CGSize(width: 2000, height: 2000)
+        
+        addChild(MapChosen)
     }
-    }
+}
