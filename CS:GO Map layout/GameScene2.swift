@@ -53,13 +53,13 @@ class GameScene2 : SKScene {
     }
     
     
-
+    
     
     override func mouseDown(with event: NSEvent) {
         
         var smokeGrenade = SKSpriteNode()
         smokeGrenade = SKSpriteNode(imageNamed: "SmokeGrenade")
-        smokeGrenade.size = CGSize(width: 60, height: 60)
+        smokeGrenade.size = CGSize(width: 65, height: 65)
         smokeGrenade.zPosition = 12
         smokeGrenade.name = "SmokeGrenade"
         
@@ -105,15 +105,11 @@ class GameScene2 : SKScene {
             
             if lastButtonPressed == "Smoke" {
                 
-                // print the Smoke image at the cordinates of the mouse
-                
-                if node.contains(event.location(in: self)) {
-                    smokeGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
-                    print("Smoke")
-                    self.addChild(smokeGrenade)
-                    
-                }
+                smokeGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
+                print("Smoke")
+                self.addChild(smokeGrenade)
             }
         }
     }
 }
+
