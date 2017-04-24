@@ -21,56 +21,56 @@ class GameScene: SKScene {
         
         var Inferno = SKSpriteNode()
         Inferno = SKSpriteNode(imageNamed: "Inferno")
-        Inferno.position = CGPoint(x: 250, y: 250)
+        Inferno.position = CGPoint(x: 270, y: 250)
         Inferno.size = CGSize(width: 500, height: 500)
         Inferno.name = "Inferno"
         self.addChild(Inferno)
 
         var Nuke = SKSpriteNode()
         Nuke = SKSpriteNode(imageNamed: "Nuke")
-        Nuke.position = CGPoint(x: 750, y: 250)
+        Nuke.position = CGPoint(x: 770, y: 250)
         Nuke.size = CGSize(width: 500, height: 500)
         Nuke.name = "Nuke"
         self.addChild(Nuke)
         
         var Mirage = SKSpriteNode()
         Mirage = SKSpriteNode(imageNamed: "Mirage")
-        Mirage.position = CGPoint(x: 1250, y: 250)
+        Mirage.position = CGPoint(x: 1270, y: 250)
         Mirage.size = CGSize(width: 500, height: 500)
         Mirage.name = "Mirage"
         self.addChild(Mirage)
         
         var Overpass = SKSpriteNode()
         Overpass = SKSpriteNode(imageNamed: "Overpass")
-        Overpass.position = CGPoint(x: 1750, y: 250)
+        Overpass.position = CGPoint(x: 1770, y: 250)
         Overpass.size = CGSize(width: 500, height: 500)
         Overpass.name = "Overpass"
         self.addChild(Overpass)
         
         var Dust = SKSpriteNode()
         Dust = SKSpriteNode(imageNamed: "Dust")
-        Dust.position = CGPoint(x: 250, y: 750)
+        Dust.position = CGPoint(x: 270, y: 750)
         Dust.size = CGSize(width: 500, height: 500)
         Dust.name = "Dust"
         self.addChild(Dust)
         
         var Train = SKSpriteNode()
         Train = SKSpriteNode(imageNamed: "Train")
-        Train.position = CGPoint(x: 750, y: 750)
+        Train.position = CGPoint(x: 770, y: 750)
         Train.size = CGSize(width: 500, height: 500)
         Train.name = "Train"
         self.addChild(Train)
         
         var Cache = SKSpriteNode()
         Cache = SKSpriteNode(imageNamed: "Cache")
-        Cache.position = CGPoint(x: 1250, y: 750)
+        Cache.position = CGPoint(x: 1270, y: 750)
         Cache.size = CGSize(width: 500, height: 500)
         Cache.name = "Cache"
         self.addChild(Cache)
         
         var Cobblestone = SKSpriteNode()
         Cobblestone = SKSpriteNode(imageNamed: "Cobblestone")
-        Cobblestone.position = CGPoint(x: 1750, y: 750)
+        Cobblestone.position = CGPoint(x: 1770, y: 750)
         Cobblestone.size = CGSize(width: 500, height: 500)
         Cobblestone.name = "Cobblestone"
         self.addChild(Cobblestone)
@@ -81,7 +81,7 @@ class GameScene: SKScene {
         Title.text = "Select A Map"
         Title.fontSize = 100
         Title.color = SKColor.red
-        Title.position = CGPoint(x: 1020, y: 1100)
+        Title.position = CGPoint(x: 1040, y: 1300)
         addChild(Title)
         
     }

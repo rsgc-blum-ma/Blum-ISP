@@ -11,10 +11,10 @@ import SpriteKit
 import GameplayKit
 import Cocoa
 
-
 // Create the new GameScene
 
 class GameScene2 : SKScene {
+    
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
         
@@ -26,18 +26,41 @@ class GameScene2 : SKScene {
         var MapChosen = SKSpriteNode()
         MapChosen = MapSelected
         MapChosen.position = CGPoint(x: 1022, y: 750)
-        MapChosen.size = CGSize(width: 2040, height: 1538)
+        MapChosen.size = CGSize(width: 2060, height: 1538)
+        MapChosen.zPosition = -1
         
         addChild(MapChosen)
         
-        var Return = SKSpriteNode()
-        Return = SKSpriteNode(imageNamed: "ReturnKey")
-        Return.position = CGPoint(x: 1010, y: 150)
-        Return.size = CGSize(width: 500, height: 240)
-        Return.name = "Return"
-        self.addChild(Return)
+        
+        var returnButton = SKSpriteNode()
+        returnButton = SKSpriteNode(imageNamed: "ReturnKey")
+        returnButton.position = CGPoint(x: 1860, y: 1600)
+        returnButton.size = CGSize(width: 350, height: 240)
+        returnButton.name = "Return"
+        returnButton.zPosition = 10
+        self.addChild(returnButton)
+        
+        var smokeButton = SKSpriteNode()
+        smokeButton = SKSpriteNode(imageNamed: "Smoke")
+        smokeButton.position = CGPoint(x: 100, y: 1700)
+        smokeButton.size = CGSize(width: 300, height: 300)
+        smokeButton.zPosition = 11
+        smokeButton.name = "Smoke"
+        self.addChild(smokeButton)
+        
     }
+    
+    
+    
+    
     override func mouseDown(with event: NSEvent) {
+        
+        var smokeGrenade = SKSpriteNode()
+        smokeGrenade = SKSpriteNode(imageNamed: "SmokeGrenade")
+        smokeGrenade.size = CGSize(width: 50, height: 50)
+        smokeGrenade.position = CGPoint(x: 50, y: 50)
+        smokeGrenade.zPosition = 12
+        smokeGrenade.name = "SmokeGrenade"
         
         // Iterate over all child nodes in the scene
         
@@ -64,6 +87,15 @@ class GameScene2 : SKScene {
                 
             }
             
+            if node.name == "Smoke" {
+                
+                if node.contains(event.location(in: self)) {
+                    
+                    addChild(smokeGrenade)
+                    
+                }
+                
+            }
         }
-}
+    }
 }
