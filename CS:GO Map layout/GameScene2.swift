@@ -16,6 +16,7 @@ import Cocoa
 class GameScene2 : SKScene {
     
     var lastButtonPressed : String = ""
+    var selectionSquare = SKShapeNode()
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
@@ -54,11 +55,37 @@ class GameScene2 : SKScene {
         molotovButton = SKSpriteNode(imageNamed: "Molotov")
         molotovButton.position = CGPoint(x: 400, y: 1700)
         molotovButton.size = CGSize(width: 300, height: 300)
-        molotovButton.zPosition = 13
+        molotovButton.zPosition = 11
         molotovButton.name = "Molotov"
         self.addChild(molotovButton)
         
-    
+        var ctButton = SKSpriteNode()
+        ctButton = SKSpriteNode(imageNamed: "teamCT")
+        ctButton.position = CGPoint(x: 1000, y: 1700)
+        ctButton.size = CGSize(width: 300, height: 300)
+        ctButton.zPosition = 11
+        ctButton.name = "teamCT"
+        self.addChild(ctButton)
+        
+        var tButton = SKSpriteNode()
+        tButton = SKSpriteNode(imageNamed: "teamT")
+        tButton.position = CGPoint(x: 700, y: 1700)
+        tButton.size = CGSize(width: 300, height: 300)
+        tButton.zPosition = 11
+        tButton.name = "teamT"
+        self.addChild(tButton)
+        
+        
+        
+        selectionSquare = SKShapeNode()
+        selectionSquare = SKShapeNode(rectOf: CGSize(width: 246, height: 320))
+        selectionSquare.position = CGPoint(x: -140, y: 1670)
+        selectionSquare.zPosition = 13
+        selectionSquare.lineWidth = 10
+        selectionSquare.strokeColor = NSColor.black
+        selectionSquare.fillColor = .clear
+        selectionSquare.name = "Square"
+        addChild(selectionSquare)
         
     }
     
@@ -81,15 +108,19 @@ class GameScene2 : SKScene {
         molotovGrenade.zPosition = 12
         molotovGrenade.name = "molotovGrenade"
         
-        var selectionSquare = SKShapeNode()
-        selectionSquare = SKShapeNode(rectOf: CGSize(width: 245, height: 320))
-        selectionSquare.position = CGPoint(x: 10, y: 1500)
-        selectionSquare.zPosition = 12
-        selectionSquare.lineWidth = 10
-        selectionSquare.strokeColor = NSColor.black
-        selectionSquare.fillColor = .clear
-        selectionSquare.name = "Square"
+        var tLogo = SKSpriteNode()
+        tLogo = SKSpriteNode(imageNamed: "tLogo")
+        tLogo.size = CGSize(width: 75, height: 60)
+        tLogo.zPosition = 12
+        tLogo.name = "tLogo"
+        
+        var ctLogo = SKSpriteNode()
+        ctLogo = SKSpriteNode(imageNamed: "ctLogo")
+        ctLogo.size = CGSize(width: 75, height: 60)
+        ctLogo.zPosition = 12
+        ctLogo.name = "ctLogo"
 
+        
         // Iterate over all child nodes in the scene
         
         for node in self.children {
@@ -136,13 +167,17 @@ class GameScene2 : SKScene {
                 
                 // make sure that mouse is clicked in the image
                 
-                if event.location(in: self).y <= 1500 {
+                if event.location(in: self).y <= 1505 {
                     smokeGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
                     print("Smoke")
                     self.addChild(smokeGrenade)
                 }
-                                selectionSquare.position = CGPoint(x: 115, y: 1670)
-                                self.addChild(selectionSquare)
+                
+                // shift the position of the selectionSquare
+                //selectionSquare.position = CGPoint(x: 115, y: 1670)
+                let actionMove = SKAction.move(to: CGPoint(x: 115, y: 1670), duration: 0.3)
+                selectionSquare.run(actionMove)
+                
             }
             
             if node.name == "Molotov" {
@@ -162,14 +197,83 @@ class GameScene2 : SKScene {
                 
                 // make sure that mouse is clicked in the image
                 
-                if event.location(in: self).y <= 1500 {
+                if event.location(in: self).y <= 1505 {
                     molotovGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
                     print("Molotov")
                     self.addChild(molotovGrenade)
                 }
                 
-                selectionSquare.position = CGPoint(x: 370, y: 1670)
-                self.addChild(selectionSquare)
+                // shift the position of the selectionSquare
+                
+//                selectionSquare.position = CGPoint(x: 370, y: 1670)
+                let actionMove = SKAction.move(to: CGPoint(x: 370, y: 1670), duration: 0.3)
+                selectionSquare.run(actionMove)
+
+                
+            }
+            
+            if node.name == "teamT" {
+                
+                if node.contains(event.location(in: self)) {
+                    
+                    lastButtonPressed = node.name!
+                    
+                    
+                }
+                
+            }
+            
+            // check if the smoke button has been pressed
+            
+            if lastButtonPressed == "teamT" {
+                
+                
+                
+                // make sure that mouse is clicked in the image
+                
+                if event.location(in: self).y <= 1505 {
+                    tLogo.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
+                    print("teamT")
+                    self.addChild(tLogo)
+                }
+                
+                // shift the position of the selectionSquare
+                //selectionSquare.position = CGPoint(x: 115, y: 1670)
+                let actionMove = SKAction.move(to: CGPoint(x: 625, y: 1670), duration: 0.3)
+                selectionSquare.run(actionMove)
+                
+            }
+            
+            if node.name == "teamCT" {
+                
+                if node.contains(event.location(in: self)) {
+                    
+                    lastButtonPressed = node.name!
+                    
+                    
+                }
+                
+            }
+            
+            // check if the smoke button has been pressed
+            
+            if lastButtonPressed == "teamCT" {
+                
+                
+                
+                // make sure that mouse is clicked in the image
+                
+                if event.location(in: self).y <= 1505 {
+                    ctLogo.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
+                    print("teamT")
+                    self.addChild(ctLogo)
+                }
+                
+                // shift the position of the selectionSquare
+                //selectionSquare.position = CGPoint(x: 115, y: 1670)
+                let actionMove = SKAction.move(to: CGPoint(x: 880, y: 1670), duration: 0.3)
+                selectionSquare.run(actionMove)
+                
             }
         }
     }
