@@ -53,7 +53,7 @@ class GameScene2 : SKScene {
         
         var molotovButton = SKSpriteNode()
         molotovButton = SKSpriteNode(imageNamed: "Molotov")
-        molotovButton.position = CGPoint(x: 400, y: 1700)
+        molotovButton.position = CGPoint(x: 390, y: 1700)
         molotovButton.size = CGSize(width: 300, height: 300)
         molotovButton.zPosition = 11
         molotovButton.name = "Molotov"
@@ -61,7 +61,7 @@ class GameScene2 : SKScene {
         
         var ctButton = SKSpriteNode()
         ctButton = SKSpriteNode(imageNamed: "teamCT")
-        ctButton.position = CGPoint(x: 950, y: 1700)
+        ctButton.position = CGPoint(x: 880, y: 1680)
         ctButton.size = CGSize(width: 100, height: 120)
         ctButton.zPosition = 11
         ctButton.name = "teamCT"
@@ -69,7 +69,7 @@ class GameScene2 : SKScene {
         
         var tButton = SKSpriteNode()
         tButton = SKSpriteNode(imageNamed: "teamT")
-        tButton.position = CGPoint(x: 650, y: 1700)
+        tButton.position = CGPoint(x: 620, y: 1680)
         tButton.size = CGSize(width: 100, height: 120)
         tButton.zPosition = 11
         tButton.name = "teamT"
@@ -77,7 +77,7 @@ class GameScene2 : SKScene {
         
         var markerButton = SKSpriteNode()
         markerButton = SKSpriteNode(imageNamed: "Marker")
-        markerButton.position = CGPoint(x: 1250, y: 1700)
+        markerButton.position = CGPoint(x: 1150, y: 1700)
         markerButton.size = CGSize(width: 100, height: 120)
         markerButton.zPosition = 11
         markerButton.name = "markerButton"
@@ -259,20 +259,19 @@ class GameScene2 : SKScene {
                 
             }
             
-            if node.name == "teamCT" {
-                
+         
                 if event.location(in: self).y >= 1505 {
                     
                     if event.location(in: self).x > 750 {
-                        if event.location(in: self).x < 901 {
+                        if event.location(in: self).x < 1011 {
                     
-                    lastButtonPressed = "TeamCT"
+                    lastButtonPressed = "teamCT"
                     
                         }
                     }
                 }
-                
-            }
+            
+            print("\(lastButtonPressed)", terminator: "")
             
             // check if the smoke button has been pressed
             
@@ -283,7 +282,7 @@ class GameScene2 : SKScene {
                 // make sure that mouse is clicked in the image
                 
                 if event.location(in: self).y <= 1505 {
-                    ctLogo.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
+                    ctLogo.position = CGPoint( x: event.location(in: self).x, y: event.location(in: self).y )
                     print("teamCT")
                     self.addChild(ctLogo)
                 }
@@ -292,43 +291,58 @@ class GameScene2 : SKScene {
                 //selectionSquare.position = CGPoint(x: 115, y: 1670)
                 let actionMove = SKAction.move(to: CGPoint(x: 880, y: 1670), duration: 0.3)
                 selectionSquare.run(actionMove)
-                
+        
             }
             
-//            if event.location(in: self).y >= 1505 {
-//                if event.location(in: self).x <= 240 {
-//                    
-//                    lastButtonPressed = "Smoke"
-//                    
-//                    
-//                }
-//            }
-//            
-//            // check if the smoke button has been pressed
-//            
-//            if lastButtonPressed == "Smoke" {
-//                
-//                
-//                
-//                // make sure that mouse is clicked in the image
-//                
-//                if event.location(in: self).y <= 1505 {
-//                    smokeGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
-//                    
-//                    print("Smoke")
-//                    self.addChild(smokeGrenade)
-//                }
-//        }
-//    }
-
-//    override func mouseDragged(with event: NSEvent) {
-//        
-//        
-//        
-//    }
-//    
-//    func eraseObject(atX: CGFloat, atY: CGFloat) {
-//        
+            if event.location(in: self).y >= 1505 {
+                if event.location(in: self).x > 1011 {
+                  if event.location(in: self).x < 1362 {
+                    lastButtonPressed = "markerButton"
+                    
+                    
+                    
+                    
+                }
+            }
+            }
+            if lastButtonPressed == "markerButton" {
+                
+                let actionMove = SKAction.move(to: CGPoint(x: 1135, y: 1670), duration: 0.3)
+                selectionSquare.run(actionMove)
+                
+            }
+        }
+        
+            // check if the smoke button has been pressed
+            
+    
+            
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        
+        var lineOrange = SKSpriteNode()
+        lineOrange = SKSpriteNode(imageNamed: "lineOrange")
+        lineOrange.size = CGSize(width: 5, height: 4)
+        lineOrange.zPosition = 13
+        lineOrange.name = "LineOrange"
+        
+        
+        if lastButtonPressed == "markerButton" {
+            if event.location(in: self).y < 1505 {
+                
+            
+                lineOrange.position = CGPoint( x: event.location(in: self).x, y: event.location(in: self).y )
+                
+                
+                print("lineOrange")
+                self.addChild(lineOrange)
+            
+    
+            }
+        }
+    func eraseObject(atX: CGFloat, atY: CGFloat) {
+        
    }
 }
 }
