@@ -15,8 +15,7 @@ import Cocoa
 
 class GameScene2 : SKScene {
     
-    var XPos : CGFloat = -9999
-    var YPos : CGFloat = -9999
+    
     var lastButtonPressed : String = ""
     var selectionSquare = SKShapeNode()
     var lineColor : String = "lineOrange"
@@ -37,6 +36,7 @@ class GameScene2 : SKScene {
         
         addChild(MapChosen)
         
+        // create all the buttonImages at the beginning of the scene
         
         var returnButton = SKSpriteNode()
         returnButton = SKSpriteNode(imageNamed: "ReturnKey")
@@ -110,7 +110,7 @@ class GameScene2 : SKScene {
         eraserButton.name = "eraserButton"
         self.addChild(eraserButton)
         
-
+        
         selectionSquare = SKShapeNode()
         selectionSquare = SKShapeNode(rectOf: CGSize(width: 246, height: 320))
         selectionSquare.position = CGPoint(x: -140, y: 1670)
@@ -123,9 +123,6 @@ class GameScene2 : SKScene {
         
     }
     override func mouseDown(with event: NSEvent) {
-        
-        XPos = event.location(in: self).x
-        YPos = event.location(in: self).y
         
         // create the images which each button will create
         
@@ -152,7 +149,7 @@ class GameScene2 : SKScene {
         ctLogo.size = CGSize(width: 50, height: 40)
         ctLogo.zPosition = 12
         ctLogo.name = "ctLogo"
-
+        
         
         // Iterate over all child nodes in the scene
         
@@ -181,10 +178,10 @@ class GameScene2 : SKScene {
             
             // check to see if Smoke was the last selected hitbox
             
-
-                
-                if event.location(in: self).y >= 1505 {
-                    if event.location(in: self).x <= 240 {
+            
+            
+            if event.location(in: self).y >= 1505 {
+                if event.location(in: self).x <= 240 {
                     
                     lastButtonPressed = "Smoke"
                     
@@ -202,11 +199,11 @@ class GameScene2 : SKScene {
                 
                 if event.location(in: self).y <= 1505 {
                     smokeGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
-                 
+                    
                     print("Smoke")
                     self.addChild(smokeGrenade)
                 }
-            
+                
                 // shift the position of the selectionSquare
                 //selectionSquare.position = CGPoint(x: 115, y: 1670)
                 let actionMove = SKAction.move(to: CGPoint(x: 115, y: 1670), duration: 0.3)
@@ -214,19 +211,19 @@ class GameScene2 : SKScene {
                 
             }
             
- 
-                
-                if event.location(in: self).y >= 1505 {
-
-                        if event.location(in: self).x >= 240  && event.location(in: self).x <= 490  {
-                           
-                    lastButtonPressed = "Molotov"
             
+            
+            if event.location(in: self).y >= 1505 {
                 
+                if event.location(in: self).x >= 240  && event.location(in: self).x <= 490  {
                     
-                            
-                    }
+                    lastButtonPressed = "Molotov"
+                    
+                    
+                    
+                    
                 }
+            }
             
             // check if the smoke button has been pressed
             
@@ -243,27 +240,27 @@ class GameScene2 : SKScene {
                 
                 // shift the position of the selectionSquare
                 
-//                selectionSquare.position = CGPoint(x: 370, y: 1670)
+                //                selectionSquare.position = CGPoint(x: 370, y: 1670)
                 let actionMove = SKAction.move(to: CGPoint(x: 370, y: 1670), duration: 0.3)
                 selectionSquare.run(actionMove)
-
+                
                 
             }
             
             
-                
+            
             if event.location(in: self).y >= 1505 {
                 
                 if event.location(in: self).x > 491 {
                     if event.location(in: self).x < 750 {
-                    
-                    
-                    lastButtonPressed = "teamT"
-                    
-                    
-                
+                        
+                        
+                        lastButtonPressed = "teamT"
+                        
+                        
+                        
+                    }
                 }
-            }
             }
             // check if the smoke button has been pressed
             
@@ -286,17 +283,17 @@ class GameScene2 : SKScene {
                 
             }
             
-         
-                if event.location(in: self).y >= 1505 {
-                    
-                    if event.location(in: self).x > 750 {
-                        if event.location(in: self).x < 1011 {
-                    
-                    lastButtonPressed = "teamCT"
-                    
-                        }
+            
+            if event.location(in: self).y >= 1505 {
+                
+                if event.location(in: self).x > 750 {
+                    if event.location(in: self).x < 1011 {
+                        
+                        lastButtonPressed = "teamCT"
+                        
                     }
                 }
+            }
             
             print("\(lastButtonPressed)", terminator: "")
             
@@ -318,19 +315,19 @@ class GameScene2 : SKScene {
                 //selectionSquare.position = CGPoint(x: 115, y: 1670)
                 let actionMove = SKAction.move(to: CGPoint(x: 880, y: 1670), duration: 0.3)
                 selectionSquare.run(actionMove)
-        
+                
             }
             
             if event.location(in: self).y >= 1505 {
                 if event.location(in: self).x > 1011 {
-                  if event.location(in: self).x < 1362 {
-                    lastButtonPressed = "markerButton"
-                    
-                    
-                    
-                    
+                    if event.location(in: self).x < 1362 {
+                        lastButtonPressed = "markerButton"
+                        
+                        
+                        
+                        
+                    }
                 }
-            }
             }
             if lastButtonPressed == "markerButton" {
                 
@@ -345,12 +342,14 @@ class GameScene2 : SKScene {
                 // Only proceed when the mouse location is within the node clicked on
                 
                 if node.contains(event.location(in: self)) {
-               
-                lineColor = "lineBlue"
+                    
+                    // set the lineColor string to blue
+                    
+                    lineColor = "lineBlue"
                     
                     
                 }
-                }
+            }
             
             if node.name == "squareOrange" {
                 
@@ -358,12 +357,14 @@ class GameScene2 : SKScene {
                 
                 if node.contains(event.location(in: self)) {
                     
+                    // set the lineColor string to orange
+                    
                     lineColor = "lineOrange"
                     
                     
                 }
             }
-         
+            
             if event.location(in: self).y >= 1505 {
                 if event.location(in: self).x > 1262 {
                     if event.location(in: self).x < 1523 {
@@ -376,80 +377,66 @@ class GameScene2 : SKScene {
                 }
             }
             if lastButtonPressed == "eraserButton" {
-                if event.location(in: self).y < 1505 {
-                    for node in self.children {
-                        if node.name == "tLogo" {
-                        
-                            if node.contains(event.location(in: self)) {
-                            removeFromParent()
-                            }
-            
-                            }
-                    }
-                }
+                
+                
                 let actionMove = SKAction.move(to: CGPoint(x: 1400, y: 1670), duration: 0.3)
                 selectionSquare.run(actionMove)
                 
             }
             
         }
-        
-            // check if the smoke button has been pressed
-        
-        
-      
-    
-            
     }
     
     override func mouseDragged(with event: NSEvent) {
-    
-        XPos = event.location(in: self).x
-        YPos = event.location(in: self).y
+        
+        // Create the line
         
         var line = SKSpriteNode()
         line = SKSpriteNode(imageNamed: ("\(lineColor)") )
         line.size = CGSize(width: 15, height: 15)
-       line.zPosition = 13
+        line.zPosition = 13
         line.name = "\(lineColor)"
-
+        
+        
+        // if user wants to select the marker button
+        
         if lastButtonPressed == "markerButton" {
             if event.location(in: self).y < 1505 {
                 
-            
+                
                 line.position = CGPoint( x: event.location(in: self).x, y: event.location(in: self).y )
                 
                 
                 print("line")
                 self.addChild(line)
-            
-    
+                
+                
             }
         }
     }
-//    func eraseObject(atX: CGFloat, atY: CGFloat) {
-//        
-//        func eraseObject(with event: NSEvent) {
-//        
-//        if lastButtonPressed == "eraserButton" {
-//            
-//            XPos = event.location(in: self).x
-//            YPos = event.location(in: self).y
-//          
-//            print("\(XPos)", terminator: "")
-//            print("\(YPos)", terminator: "")
-//            
-//            for node in self.children {
-//                
-//                if node.contains(event.location(in: self).x) {
-//                    if node.contains(event.location(in: self).y) {
-//                
-//    
-//                removeAllChildren()
-//                }
-//                }
-//        }
-//        }
-//    }
-//}
+    //    func eraseObject(atX: CGFloat, atY: CGFloat) {
+    //
+    //        func eraseObject(with event: NSEvent) {
+    //
+    //        if lastButtonPressed == "eraserButton" {
+    //
+    //            XPos = event.location(in: self).x
+    //            YPos = event.location(in: self).y
+    //
+    //            print("\(XPos)", terminator: "")
+    //            print("\(YPos)", terminator: "")
+    //
+    //            for node in self.children {
+    //
+    //                if node.contains(event.location(in: self).x) {
+    //                    if node.contains(event.location(in: self).y) {
+    //
+    //
+    //                removeAllChildren()
+    //                }
+    //                }
+    //        }
+    //        }
+    //    }
+    //}
 }
