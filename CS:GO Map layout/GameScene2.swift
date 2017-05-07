@@ -15,8 +15,11 @@ import Cocoa
 
 class GameScene2 : SKScene {
     
+    var XPos : CGFloat = -9999
+    var YPos : CGFloat = -9999
     var lastButtonPressed : String = ""
     var selectionSquare = SKShapeNode()
+    var lineColor : String = "lineOrange"
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
@@ -83,9 +86,31 @@ class GameScene2 : SKScene {
         markerButton.name = "markerButton"
         self.addChild(markerButton)
         
+        var squareOrange = SKSpriteNode()
+        squareOrange = SKSpriteNode(imageNamed: "squareOrange")
+        squareOrange.position = CGPoint(x: 1100, y: 1600)
+        squareOrange.size = CGSize(width: 80, height: 80)
+        squareOrange.zPosition = 11
+        squareOrange.name = "squareOrange"
+        self.addChild(squareOrange)
         
+        var squareBlue = SKSpriteNode()
+        squareBlue = SKSpriteNode(imageNamed: "squareBlue")
+        squareBlue.position = CGPoint(x: 1180, y: 1600)
+        squareBlue.size = CGSize(width: 80, height: 80)
+        squareBlue.zPosition = 11
+        squareBlue.name = "squareBlue"
+        self.addChild(squareBlue)
         
+        var eraserButton = SKSpriteNode()
+        eraserButton = SKSpriteNode(imageNamed: "eraserButton")
+        eraserButton.position = CGPoint(x: 1410, y: 1660)
+        eraserButton.size = CGSize(width: 150, height: 150)
+        eraserButton.zPosition = 11
+        eraserButton.name = "eraserButton"
+        self.addChild(eraserButton)
         
+
         selectionSquare = SKShapeNode()
         selectionSquare = SKShapeNode(rectOf: CGSize(width: 246, height: 320))
         selectionSquare.position = CGPoint(x: -140, y: 1670)
@@ -99,6 +124,9 @@ class GameScene2 : SKScene {
     }
     override func mouseDown(with event: NSEvent) {
         
+        XPos = event.location(in: self).x
+        YPos = event.location(in: self).y
+        
         // create the images which each button will create
         
         var smokeGrenade = SKSpriteNode()
@@ -107,11 +135,11 @@ class GameScene2 : SKScene {
         smokeGrenade.zPosition = 12
         smokeGrenade.name = "SmokeGrenade"
         
-        var molotovGrenade = SKSpriteNode()
-        molotovGrenade = SKSpriteNode(imageNamed: "MolotovGrenade")
-        molotovGrenade.size = CGSize(width: 75, height: 60)
-        molotovGrenade.zPosition = 12
-        molotovGrenade.name = "molotovGrenade"
+        var MolotovGrenade = SKSpriteNode()
+        MolotovGrenade = SKSpriteNode(imageNamed: "MolotovGrenade")
+        MolotovGrenade.size = CGSize(width: 125, height: 100)
+        MolotovGrenade.zPosition = 12
+        MolotovGrenade.name = "MolotovGrenade"
         
         var tLogo = SKSpriteNode()
         tLogo = SKSpriteNode(imageNamed: "tLogo")
@@ -193,7 +221,6 @@ class GameScene2 : SKScene {
                         if event.location(in: self).x >= 240  && event.location(in: self).x <= 490  {
                            
                     lastButtonPressed = "Molotov"
-                    
             
                 
                     
@@ -209,9 +236,9 @@ class GameScene2 : SKScene {
                 
                 if event.location(in: self).y <= 1505 {
                     
-                    molotovGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
+                    MolotovGrenade.position = CGPoint(x: (event.location(in: self).x), y: (event.location(in: self).y))
                     print("Molotov")
-                    self.addChild(molotovGrenade)
+                    self.addChild(MolotovGrenade)
                 }
                 
                 // shift the position of the selectionSquare
@@ -311,38 +338,118 @@ class GameScene2 : SKScene {
                 selectionSquare.run(actionMove)
                 
             }
+            
+            
+            if node.name == "squareBlue" {
+                
+                // Only proceed when the mouse location is within the node clicked on
+                
+                if node.contains(event.location(in: self)) {
+               
+                lineColor = "lineBlue"
+                    
+                    
+                }
+                }
+            
+            if node.name == "squareOrange" {
+                
+                // Only proceed when the mouse location is within the node clicked on
+                
+                if node.contains(event.location(in: self)) {
+                    
+                    lineColor = "lineOrange"
+                    
+                    
+                }
+            }
+         
+            if event.location(in: self).y >= 1505 {
+                if event.location(in: self).x > 1262 {
+                    if event.location(in: self).x < 1523 {
+                        lastButtonPressed = "eraserButton"
+                        
+                        
+                        
+                        
+                    }
+                }
+            }
+            if lastButtonPressed == "eraserButton" {
+                if event.location(in: self).y < 1505 {
+                    for node in self.children {
+                        if node.name == "tLogo" {
+                        
+                            if node.contains(event.location(in: self)) {
+                            removeFromParent()
+                            }
+            
+                            }
+                    }
+                }
+                let actionMove = SKAction.move(to: CGPoint(x: 1400, y: 1670), duration: 0.3)
+                selectionSquare.run(actionMove)
+                
+            }
+            
         }
         
             // check if the smoke button has been pressed
-            
+        
+        
+      
     
             
     }
     
     override func mouseDragged(with event: NSEvent) {
+    
+        XPos = event.location(in: self).x
+        YPos = event.location(in: self).y
         
-        var lineOrange = SKSpriteNode()
-        lineOrange = SKSpriteNode(imageNamed: "lineOrange")
-        lineOrange.size = CGSize(width: 5, height: 4)
-        lineOrange.zPosition = 13
-        lineOrange.name = "LineOrange"
-        
-        
+        var line = SKSpriteNode()
+        line = SKSpriteNode(imageNamed: ("\(lineColor)") )
+        line.size = CGSize(width: 15, height: 15)
+       line.zPosition = 13
+        line.name = "\(lineColor)"
+
         if lastButtonPressed == "markerButton" {
             if event.location(in: self).y < 1505 {
                 
             
-                lineOrange.position = CGPoint( x: event.location(in: self).x, y: event.location(in: self).y )
+                line.position = CGPoint( x: event.location(in: self).x, y: event.location(in: self).y )
                 
                 
-                print("lineOrange")
-                self.addChild(lineOrange)
+                print("line")
+                self.addChild(line)
             
     
             }
         }
-    func eraseObject(atX: CGFloat, atY: CGFloat) {
-        
-   }
-}
+    }
+//    func eraseObject(atX: CGFloat, atY: CGFloat) {
+//        
+//        func eraseObject(with event: NSEvent) {
+//        
+//        if lastButtonPressed == "eraserButton" {
+//            
+//            XPos = event.location(in: self).x
+//            YPos = event.location(in: self).y
+//          
+//            print("\(XPos)", terminator: "")
+//            print("\(YPos)", terminator: "")
+//            
+//            for node in self.children {
+//                
+//                if node.contains(event.location(in: self).x) {
+//                    if node.contains(event.location(in: self).y) {
+//                
+//    
+//                removeAllChildren()
+//                }
+//                }
+//        }
+//        }
+//    }
+//}
 }
